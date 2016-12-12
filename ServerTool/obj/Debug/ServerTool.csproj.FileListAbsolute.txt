@@ -1,0 +1,9 @@
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\bin\Debug\ServerTool.exe.config
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\obj\Debug\ServerTool.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\obj\Debug\ServerTool.Form1.resources
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\obj\Debug\ServerTool.Properties.Resources.resources
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\obj\Debug\ServerTool.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\bin\Debug\ServerTool.exe
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\bin\Debug\ServerTool.pdb
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\obj\Debug\ServerTool.exe
+c:\users\user\documents\visual studio 2015\Projects\ServerTool\ServerTool\obj\Debug\ServerTool.pdb
