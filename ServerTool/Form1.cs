@@ -172,7 +172,7 @@ namespace ServerTool
             {
                 Console.WriteLine("[+] Starting auto restart loop to execute every {0} hours", Convert.ToInt32(textBox1.Text));
 
-                aTimer = new System.Timers.Timer(Convert.ToInt32(textBox1.Text)  * 1000); //one hour in milliseconds
+                aTimer = new System.Timers.Timer(Convert.ToInt32(textBox1.Text) * 60 * 1000); //one hour in milliseconds
                 aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
                 aTimer.AutoReset = true;
                 aTimer.Enabled = true;
