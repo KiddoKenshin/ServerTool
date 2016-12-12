@@ -122,11 +122,10 @@ namespace ServerTool
             {
                 p.Kill();
                 Form1.Wait(3000);
-                //string localdir = Environment.GetEnvironmentVariable("LocalAppData");
-                // string workdir = Path.Combine(localdir, "\\Warframe\\Downloaded\\Public\\Tools\\");
-                //MessageBox.Show(workdir);
-                //string cmd = "C:/Users/user/AppData/Local/Warframe/Downloaded/Public/Tools/Launcher.exe -headless -dedicated";
-                string cmd = "WINEARCH=win32 WINEPREFIX=/games/Warframe wine /games/Downloaded/Public/Warframe.exe -fullscreen:0 -dx10:0 -dx11:0 -threadedworker:1 -cluster:public -language:en -allowmultiple -log:DedicatedServer.log -applet:/Lotus/Types/Game/DedicatedServer /Lotus/Types/GameRules/DefaultDedicatedServerSettings -override:{\"missionId\":CTF_Title}";
+                string localdir = Environment.GetEnvironmentVariable("LocalAppData");
+                string workdir = Path.Combine(localdir, "Warframe\\Downloaded\\Public\\Tools\\");
+                string cmd = String.Format("{0}Launcher.exe -headless -dedicated", workdir);
+                
                 ExecuteCommandSync(cmd);
             }
         }
@@ -135,7 +134,7 @@ namespace ServerTool
         {
 
             Process title = WinGetHandle("Retail Windows");
-            String t = "";
+           
             if (title != null)
             {
                 if (title.MainWindowTitle != "")
@@ -161,13 +160,19 @@ namespace ServerTool
                 {
                     Console.WriteLine("[+] Disabling autorestart.");
                     aTimer.Enabled = false;
+                    button2.Text = "Restart";
+                } else
+                {
+                    Console.WriteLine("[+] Enabling autorestart.");
+                    aTimer.Enabled = true;
+                    button2.Text = "Stop";
                 }
             }
             else
             {
                 Console.WriteLine("[+] Starting auto restart loop to execute every {0} hours", Convert.ToInt32(textBox1.Text));
 
-                aTimer = new System.Timers.Timer(Convert.ToInt32(textBox1.Text) * 60 * 1000); //one hour in milliseconds
+                aTimer = new System.Timers.Timer(Convert.ToInt32(textBox1.Text)  * 1000); //one hour in milliseconds
                 aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
                 aTimer.AutoReset = true;
                 aTimer.Enabled = true;
